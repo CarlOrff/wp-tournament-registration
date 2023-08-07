@@ -25,7 +25,7 @@ function wptournreg_install() {
 		rating1 mediumint(9) DEFAULT NULL,
 		rating2 mediumint(9) DEFAULT NULL,
 		affiliation tinytext DEFAULT '' NOT NULL,
-		message text DEFAULT '' NOT NULL,
+		message mediumtext DEFAULT '' NOT NULL,
 		approved bool DEFAULT FALSE NOT NULL,
 		protected bool DEFAULT FALSE NOT NULL,
 		fee_is_paid bool DEFAULT FALSE NOT NULL,

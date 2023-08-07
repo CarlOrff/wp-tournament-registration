@@ -59,7 +59,7 @@ function wptournreg_get_fields( $atts = [] ) {
 		
 		return "<p$id$class$style>$label<input$id$class$name$required$disabled$placeholder type='tell' size='$mallsize'></p>";
 	}
-	else if ( $scheme[ $field ] == 'text' ) {
+	else if ( $scheme[ $field ] == 'mediumtext' ) {
 		
 		return "<p$id$class$css>$label<textarea$name$required$disabled$placeholder cols='$bigsize' rows='8'></textarea></p>";
 	}

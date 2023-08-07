@@ -24,6 +24,11 @@ function wptournreg_upgrade() {
 			$wpdb->query('ALTER TABLE ' . WP_TOURNREG_DATA_TABLE . ' ADD UNIQUE (hash);' );
 		}
 		
+		if ( version_compare( $db_ver, '5', '<' ) ) {
+			
+			$wpdb->query('ALTER TABLE `' . WP_TOURNREG_DATA_TABLE . '` CHANGE `message` `message` MEDIUMTEXT;' );
+		}
+		
 		update_option( 'wptournreg_db_version', WP_TOURNREG_DB_VER );
 	}
 	

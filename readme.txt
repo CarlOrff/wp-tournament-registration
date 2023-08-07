@@ -3,9 +3,9 @@
 Contributors: archaeopath
 Tags: events, registration, event registration, competition, tournament, tournaments, competitions, sport, chess, hobby sport
 Requires at least: 5.3
-Tested up to: 5.7
+Tested up to: 6.2.3
 Requires PHP: 7.0
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://ingram-braun.net/erga/donations/
@@ -170,6 +170,11 @@ a site against others it is probably a good idea to namespace your tournament ID
 WP Tournament Registration does some checks to avoid spam.
 
 == Changelog ==
+
+= 1.1.3 =
+
+* tested with WordPress 6.2.3
+* message field bug fixed
 
 = 1.1.2 =
 

@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 */
 
 /* VERSIONS */
-define( "WP_TOURNREG_DB_VER", 4 );
+define( "WP_TOURNREG_DB_VER", 5 );
 define( "WP_TOURNREG_PLUGIN_VER", '1.1.2' );
 define( "WP_TOURNREG_TBSORT_VER", '2.31.3' );
 
