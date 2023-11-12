@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 /*
 * Plugin Name:         WP Tournament Registration
 * Plugin URI:          https://ingram-braun.net/erga/wp-tournament-registration-wordpress-plugin/
-* Version:             1.2c
+* Version:             1.2.5
 * Requires at least:   5.3
 * Requires PHP:        7.0
 * Author:              Ingram Braun
