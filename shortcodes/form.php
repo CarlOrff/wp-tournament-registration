@@ -88,6 +88,8 @@ function wptournreg_add_participant() {
 
 				if ( count( $to ) > 0 ) {
 					
+					$mailbody = '';
+					
 					foreach ( $_POST as $key => $value ) {
 						
 						if ( $key == 'touched' ) { continue; }
