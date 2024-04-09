@@ -3,9 +3,9 @@
 Contributors: archaeopath
 Tags: events, registration, event registration, competition, tournament, tournaments, competitions, sport, chess, hobby sport
 Requires at least: 5.3
-Tested up to: 6.4
+Tested up to: 6.5
 Requires PHP: 7.0
-Stable tag: 1.2.5
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://ingram-braun.net/erga/donations/
@@ -30,7 +30,7 @@ All these shortcodes are customizable through a set of optional attributes.
 * `birthyear` [integer]: self-explanatory
 * `city` [text]: self-explanatory.
 * `custom1`, `custom2`, `custom3`, `custom4`, `custom5` [text]: if anything is missing.
-* `email` [text]: self-explanatory.
+* `email` [text]: comma-separated list of user names to notify of a new participant.
 * `fee_is_paid` [checkbox]:  self-explanatory.
 * `firstname` [text]: self-explanatory.
 * `id` [read-only]: an integer that serves as primary key and is incremented with every registration. Use it to separate entries if people register twice.
@@ -170,6 +170,10 @@ a site against others it is probably a good idea to namespace your tournament ID
 WP Tournament Registration does some checks to avoid spam.
 
 == Changelog ==
+
+= 1.3.0 =
+
+* E-mail notification fix (remark the doc update!)
 
 = 1.2b =
 

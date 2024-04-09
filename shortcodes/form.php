@@ -52,7 +52,7 @@ function wptournreg_get_form( $atts = [], $content = null ) {
 		$backlink = wptournreg_get_backlink( 'form' );
 	}
 	
-	return "<form$id$class$css$action>$noscript$tournament" . do_shortcode( $content, false ) . '<input type="hidden" name="action" value="wptournreg_add_participant"><input type="submit"' . $disabled . '><input type="reset"' . $disabled . '></form>' . $backlink;
+	return "<form$id$class$css$action>$noscript$tournament" . do_shortcode( $content, false ) . '<input type="hidden" name="action" value="wptournreg_add_participant">' . $email  . '<input type="submit"' . $disabled . '><input type="reset"' . $disabled . '></form>' . $backlink;
 }
 
 add_shortcode( 'wptournregform', 'wptournreg_get_form' );
@@ -74,12 +74,12 @@ function wptournreg_add_participant() {
 			if ( isset( $_POST[ 'cc' ] ) ) {
 				
 				require_once WP_TOURNREG_DATABASE_PATH . 'escape.php';
-				$addressee = preg_split( '/\s*,\s*/', wptournreg_escape( $_POST[ 'cc' ] ) );
+				$addressee = explode( ',', wptournreg_escape( $_POST[ 'cc' ] ) );
 				$to =[];
 				
 				foreach ( $addressee as $email ) {
 					
-					$user = get_user_by( 'login', $addressee );
+					$user = get_user_by( 'login', trim( $email ) );
 					if ( $user !== false ) {
 						
 						$to[] = $user->user_email;
