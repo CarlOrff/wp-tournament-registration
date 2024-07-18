@@ -3,9 +3,9 @@
 Contributors: archaeopath
 Tags: events, registration, event registration, competition, tournament, tournaments, competitions, sport, chess, hobby sport
 Requires at least: 5.3
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 7.0
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://ingram-braun.net/erga/donations/
@@ -165,7 +165,7 @@ then you can provide a registration form in every language for the same tourname
 a site against others it is probably a good idea to namespace your tournament IDs somehow, eg. 
 `mysite_mytournamentid` 
 
-= Why does it work with JavaScript enabled ony? =
+= Why does it work with JavaScript enabled only? =
 
 WP Tournament Registration does some checks to avoid spam.
 
