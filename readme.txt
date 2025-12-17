@@ -171,6 +171,10 @@ WP Tournament Registration does some checks to avoid spam.
 
 == Changelog ==
 
+= 1.4.0 =
+
+* Security issue fixed
+
 = 1.3.0 =
 
 * E-mail notification fix (remark the doc update!)
