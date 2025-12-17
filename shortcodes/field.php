@@ -49,7 +49,7 @@ function wptournreg_get_fields( $atts = [] ) {
 	
 	if ( !isset( $scheme[ $field ] ) ) {
 		
-		return sprintf( __( '%sERROR: There is not a field %s!%s', 'wp-tournament-registration' ), '<strong class="wptournreg-error">', "<kbd>$field</kbd>", '</strong>' );
+		return sprintf( __( '%sERROR: There is no field %s!%s', 'wp-tournament-registration' ), '<strong class="wptournreg-error">', "<kbd>$field</kbd>", '</strong>' );
 	}
 	else if ( $field == 'email' ) {
 		
