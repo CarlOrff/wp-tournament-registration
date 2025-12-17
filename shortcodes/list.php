@@ -42,8 +42,8 @@ function wptournreg_get_list( $atts = [] ) {
 	require_once WP_TOURNREG_DATABASE_PATH . 'scheme.php';
 	$scheme = wptournreg_get_field_list();
 	
-	$fields = preg_split( '/\s*,\s*/', $a[ 'display_fields' ]);
-	$protected_fields = preg_split( '/\s*,\s*/', $a[ 'protected_fields' ]);
+	$fields = preg_split( '/\s*,\s*/', sanitize_text_field( trim( $a[ 'display_fields' ] ) ) );
+	$protected_fields = ( empty ( $a[ 'protected_fields' ] ) ) ? '' : preg_split( '/\s*,\s*/', sanitize_text_field( trim(  $a[ 'protected_fields' ] ) ) );
 	
 	/* add custom CSS */
 	$css = ( empty ( $a[ 'css' ] ) ) ? '' : ' style="' . trim( esc_attr( $a[ 'css' ] ) ) . '"';

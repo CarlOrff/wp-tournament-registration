@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 /*
 * Plugin Name:         WP Tournament Registration
 * Plugin URI:          https://ingram-braun.net/erga/wp-tournament-registration-wordpress-plugin/
-* Version:             1.4.0
+* Version:             1.4.1
 * Requires at least:   5.3
 * Requires PHP:        7.0
 * Author:              Ingram Braun
@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 /* VERSIONS */
 define( "WP_TOURNREG_DB_VER", 5 );
-define( "WP_TOURNREG_PLUGIN_VER", '1.4.0' );
+define( "WP_TOURNREG_PLUGIN_VER", '1.4.1' );
 define( "WP_TOURNREG_TBSORT_VER", '2.31.3' );
 
 /* PATHES */
@@ -38,6 +38,9 @@ define( "WP_TOURNREG_CSS_URL", plugins_url( 'assets/wptournreg.css', __FILE__ ) 
 define( "WP_TOURNREG_JS_URL", plugins_url( 'assets/wptournreg.js', __FILE__ ) );
 define( "WP_TOURNREG_TBSORTJS_URL", plugins_url( 'assets/jquery.tablesorter/js/jquery.tablesorter.min.js', __FILE__ ) );
 define( "WP_TOURNREG_TBSORTCSS_URL", plugins_url( 'assets/jquery.tablesorter/css/theme.default.min.css', __FILE__ ) );
+define( "WP_TOURNREG_DROPDOWNJS_URL", plugins_url( 'assets/suggestion-input-dropdown/jquery.input-dropdown.js', __FILE__ ) );
+define( "WP_TOURNREG_DROPDOWNCSS_URL", plugins_url( 'assets/suggestion-input-dropdown/jquery.input-dropdown.css', __FILE__ ) );
+
 
 /* TABLE NAME */
 global $wpdb;
@@ -68,6 +71,7 @@ require_once WP_TOURNREG_SHORTCODE_PATH . 'form.php';
 require_once WP_TOURNREG_SHORTCODE_PATH . 'list.php';
 require_once WP_TOURNREG_SHORTCODE_PATH . 'export.php';
 
+require_once WP_TOURNREG_ASSETS_PATH . 'input_dropdown.php';
 require_once WP_TOURNREG_ASSETS_PATH . 'tablesort.php';
 require_once WP_TOURNREG_ASSETS_PATH . 'load.php';
 

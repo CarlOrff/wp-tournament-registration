@@ -6,7 +6,7 @@ function wptournreg_load_assets() {
 	wp_register_script(
 		'wptournreg', // $handle
 		WP_TOURNREG_JS_URL, // $url
-		array( 'jquery', 'wptournregtablesorter' ), // $deps
+		array( 'jquery', 'wptournreginputdropdown', 'wptournregtablesorter' ), // $deps
 		WP_TOURNREG_PLUGIN_VER, // $ver
 		true // $in_footer
 	);
@@ -14,10 +14,11 @@ function wptournreg_load_assets() {
 	wp_register_style(
 		'wptournreg', // $handle
 		WP_TOURNREG_CSS_URL, // $url
-		array( 'wptournregtablesorter' ), // $deps
+		array( 'wptournreginputdropdown', 'wptournregtablesorter' ), // $deps
 		WP_TOURNREG_PLUGIN_VER, // $ver
 		false // $in_footer
 	);
+	
 }
 
 /* add  scripts and styles */  

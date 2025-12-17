@@ -38,3 +38,29 @@ jQuery( '.wptournreg-form input' ).on( 'focus mouseover touch', function() {
 		jQuery( '.wptournreg-form' ).prepend( '<input type="hidden" name="touched" value="1">' );
 	}
 });
+
+var wptournregsuggestions = false;
+$( '.wptournreg-form [data-field-suggestions]').on( 'mouseover touchover', function() {
+	
+	if ( wptournregsuggestions === false ) {
+		
+		wptournregsuggestions = true;
+		let elem = jQuery( this );
+		let arr = elem.data('field-suggestions').split(',');
+		let dataList = [];
+		
+		for (let index = 0; index < arr.length; ++index) {
+			const element = arr[index];
+			const value = 
+			dataList[index] = { name:element, value:element.replace(/\s+/g, '&nbsp;') }
+		}
+		
+		elem.inputDropdown(dataList, {
+			formatter: data => {
+			return `<li language=${data.value}>${data.name}</li>`
+		},
+			valueKey: 'language' // default: data-value
+		})
+		elem.removeData( 'field-suggestions' );
+	}
+});

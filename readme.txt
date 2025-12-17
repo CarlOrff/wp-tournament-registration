@@ -5,7 +5,7 @@ Tags: events, registration, event registration, competition, tournament, tournam
 Requires at least: 5.3
 Tested up to: 6.9
 Requires PHP: 7.0
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://ingram-braun.net/erga/donations/
@@ -95,6 +95,7 @@ It is advisable not to misuse fields since there are some internal checks on the
 * `disabled` disables the field if set to any value.
 * `field` one of the field names (cf. list above).
 * `label` the label of the field.
+* `options` a comma separated list of options for a suggestion list. Takes only effect in text input fields.
 * `placeholder` the placeholder is shown in an empty field.
 * `required` if set to any value the field is marked as required.
 
@@ -102,7 +103,7 @@ It is advisable not to misuse fields since there are some internal checks on the
 
 The first example is a registration form. Several `wptournregfield` shortcodes are wrapped by a `wptournregfield` one. You can put HTML elements between (fi. fieldsets) in order to design your form:
 
-`[wptournregform tournament_id="my_tournament" css_id="my_tournament" email="subscription@example.com"]<p>Red labels indicate required fields!</p><fieldset><legend>Who you are</legend>[wptournregfield field="lastname" label="Family name" required="1" /][wptournregfield field="firstname" label="Christian name" required="1" /][wptournregfield field="affiliation" label="Club" required="1" placeholder="or 'free agent'" /][wptournregfield field="rating1" label="DWZ"  /]</fieldset><fieldset><legend>Your contact data (not to be published)</legend>[wptournregfield field="email" label="E-mail" /][wptournregfield field="phone1" label="Phone 1" required="1" /][wptournregfield field="phone2" label="Phone 2" /]</fieldset>[wptournregfield field="message" label="Your message" placeholder="Whatever you like to tell us." /][/wptournregform]`
+`[wptournregform tournament_id="my_tournament" css_id="my_tournament" email="subscription@example.com"]<p>Red labels indicate required fields!</p><fieldset><legend>Who you are</legend>[wptournregfield field="lastname" label="Family name" required="1" /][wptournregfield field="firstname" label="Christian name" required="1" /][wptournregfield field="affiliation" label="Club" required="1" placeholder="or 'free agent'" options="Paris SG, Hertha Berlin, Oslo CC" /][wptournregfield field="rating1" label="DWZ"  /]</fieldset><fieldset><legend>Your contact data (not to be published)</legend>[wptournregfield field="email" label="E-mail" /][wptournregfield field="phone1" label="Phone 1" required="1" /][wptournregfield field="phone2" label="Phone 2" /]</fieldset>[wptournregfield field="message" label="Your message" placeholder="Whatever you like to tell us." /][/wptournregform]`
 
 The next instance is an editor for the data of the tournament. The non-approved players are highlihted in the selection list:
 
@@ -171,9 +172,14 @@ WP Tournament Registration does some checks to avoid spam.
 
 == Changelog ==
 
+= 1.4.1 =
+
+* dropdown lists for text fields
+* some internal code optimizations
+
 = 1.4.0 =
 
-* Security issue fixed
+* security fix
 
 = 1.3.0 =
 

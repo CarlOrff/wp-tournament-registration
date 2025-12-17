@@ -21,6 +21,7 @@ function wptournreg_get_fields( $atts = [] ) {
 		'disabled' => null,
 		'field' => null,
 		'label' => null,
+		'options' => null,
 		'placeholder' => null,
 		'required' => null,
 	), $atts );
@@ -29,6 +30,10 @@ function wptournreg_get_fields( $atts = [] ) {
 	$checked = ( empty ( $a[ 'checked' ] ) ) ? '' : ' required="checked"';
 	$label = '<label for="' . $field . '">' . ( empty ( $a[ 'label' ] ) ? $field : sanitize_text_field( $a[ 'label' ] ) ) . '</label>';
 	$name=' name="' . $field . '"';
+	$options =  ( empty ( $a[ 'options' ] ) ) ? '' : preg_split( '/\s*,\s*/', sanitize_text_field( trim(  $a[ 'options' ] ) ) );
+	if ( is_array( $options ) ) {
+		$options = "autocomplete='off' data-field-suggestions='" . implode( ',', $options ) . "'";
+	}
 	$placeholder = ( empty ( $a[ 'placeholder' ] ) ) ? '' : ' placeholder="' . esc_attr( trim( $a[ 'placeholder' ] ) ) . '"';
 	$required = ( !isset( $a[ 'required' ] ) ) ? '' : ' required';
 	$disabled = ( !isset( $a[ 'disabled' ] ) ) ? '' : ' disabled';
@@ -65,7 +70,7 @@ function wptournreg_get_fields( $atts = [] ) {
 	}
 	else if ( preg_match( '/char|string|text/i', $scheme[ $field ] ) ) {
 	
-		return "<p$id$class$css>$label<input$id$class$name$required$disabled$placeholder type='text' size='$bigsize'></p>";
+		return "<p$id$class$css>$label<input$id$class$name$required$disabled$placeholder$options type='text' size='$bigsize'></p>";
 	}
 	else if ( preg_match( '/bool|int\(1\)/i', $scheme[ $field ] ) ) {
 	

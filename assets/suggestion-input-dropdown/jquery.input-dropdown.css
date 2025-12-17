@@ -1,0 +1,22 @@
+ul.jq-input-dropdown,
+ul.jq-input-dropdown li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+ul.jq-input-dropdown {
+  border: 1px solid #ccc;
+  list-style: none;
+  display: none;
+  z-index: 100;
+}
+
+ul.jq-input-dropdown li:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
