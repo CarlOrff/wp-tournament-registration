@@ -3,9 +3,9 @@
 Contributors: archaeopath
 Tags: events, registration, event registration, competition, tournament, tournaments, competitions, sport, chess, hobby sport
 Requires at least: 5.3
-Tested up to: 6.6
+Tested up to: 6.9
 Requires PHP: 7.0
-Stable tag: 1.3.1
+Stable tag: 1.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://ingram-braun.net/erga/donations/

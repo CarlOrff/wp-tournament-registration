@@ -25,17 +25,17 @@ function wptournreg_get_fields( $atts = [] ) {
 		'required' => null,
 	), $atts );
 	
-	$field = trim( $a[ 'field' ] );
+	$field = sanitize_text_field( trim( $a[ 'field' ] ) );
 	$checked = ( empty ( $a[ 'checked' ] ) ) ? '' : ' required="checked"';
-	$label = '<label for="' . $a[ 'field' ] . '">' . ( empty ( $a[ 'label' ] ) ? $a[ 'field' ] :  $a[ 'label' ]  ) . '</label>';
-	$name=' name="' . $a[ 'field' ] . '"';
-	$placeholder = ( empty ( $a[ 'placeholder' ] ) ) ? '' : ' placeholder="' . $a[ 'placeholder' ] . '"';
+	$label = '<label for="' . $field . '">' . ( empty ( $a[ 'label' ] ) ? $field : sanitize_text_field( $a[ 'label' ] ) ) . '</label>';
+	$name=' name="' . $field . '"';
+	$placeholder = ( empty ( $a[ 'placeholder' ] ) ) ? '' : ' placeholder="' . esc_attr( trim( $a[ 'placeholder' ] ) ) . '"';
 	$required = ( !isset( $a[ 'required' ] ) ) ? '' : ' required';
 	$disabled = ( !isset( $a[ 'disabled' ] ) ) ? '' : ' disabled';
 	
 	/* add custom CSS */
-	$css = ( empty ( $a[ 'css' ] ) ) ? '' : ' style="' . trim( esc_attr( $a[ 'css' ] ) ) . '"';
-	$class = ' class="wptournreg-field' . ( !isset( $a[ 'required' ] ) ? '' : ' wptourn-required' ) . ( empty ( $a[ 'class' ] ) ? '' : ' ' . trim( esc_attr( $a[ 'class' ] ) ) ) . '"';
+	$css = ( empty ( $a[ 'css' ] ) ) ? '' : ' style="' . esc_attr( trim( $a[ 'css' ] ) ) . '"';
+	$class = ' class="wptournreg-field' . ( !isset( $a[ 'required' ] ) ? '' : ' wptourn-required' ) . ( empty ( $a[ 'class' ] ) ? '' : ' ' . sanitize_html_class( $a[ 'class' ] ) ) . '"';
 	$id = ( empty ( $a[ 'css_id' ] ) ) ? '' : ' id="' . trim( esc_attr( $a[ 'css_id' ] ) ) . '"';
 	
 	/* sizes */
