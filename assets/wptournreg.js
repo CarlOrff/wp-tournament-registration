@@ -40,7 +40,7 @@ jQuery( '.wptournreg-form input' ).on( 'focus mouseover touch', function() {
 });
 
 var wptournregsuggestions = false;
-$( '.wptournreg-form [data-field-suggestions]').on( 'mouseover touchover', function() {
+jQuery( '.wptournreg-form [data-field-suggestions]').on( 'mouseover touchover', function() {
 	
 	if ( wptournregsuggestions === false ) {
 		
